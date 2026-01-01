@@ -12,7 +12,7 @@ class Stack:
             print(f"{num} has benn stored successfully")
 
     def pop(self):
-        if self.IsEmpty:
+        if self.IsEmpty():
             raise Exception ("The Stack is Empty")
         else:
             self.pointer -=1
