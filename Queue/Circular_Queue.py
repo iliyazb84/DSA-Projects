@@ -1,7 +1,7 @@
 
 # Creating Queue Using Circular Method.
 
-class Queue:
+class CirQueue:
     def __init__(self, size):        
         # Defining Queue.
         self.queue_size = size
@@ -63,21 +63,3 @@ class Queue:
     #! Printing Normal Queue
     def print_queue(self):
         print(f"Your queue:\n{self.Queue}")
-
-myqueue = Queue(5)
-myqueue.print_queue()
-myqueue.enqueue(3)
-myqueue.enqueue(5)
-myqueue.enqueue(2)
-myqueue.print_queue()
-myqueue.peek()
-myqueue.dequeue()
-myqueue.peek()
-myqueue.print_queue()
-myqueue.reverse_queue()
-myqueue.reverse_queue()
-
-
-# while(True):
-#     print ("[0] Add Data to Queue\n[1] ")
-#     key = int(input("\nEnter your action: "))
