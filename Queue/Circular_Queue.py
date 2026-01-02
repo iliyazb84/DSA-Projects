@@ -6,7 +6,6 @@ class Queue:
         # Defining Queue.
         self.queue_size = size
         self.Queue = [None] * self.queue_size
-        self.ReversedQueue = [None]
 
         # Defining Pointers to See Front and Rear Elements!
         self.front = self.rear = -1
@@ -55,9 +54,11 @@ class Queue:
 
     #! Reversing Queue's Order
     def reverse_queue(self):
+        tempQueue = [None]
         for i in range(self.queue_size - 1, -1, -1):
-            self.ReversedQueue.append(self.Queue[i])
-        print(f"Here is Your Queue Reversed:\n{self.ReversedQueue}")
+            tempQueue.append(self.Queue[i])
+        self.Queue = tempQueue
+        print(f"Here is Your Queue Reversed:\n{self.Queue}")
 
     #! Printing Normal Queue
     def print_queue(self):
@@ -73,6 +74,7 @@ myqueue.peek()
 myqueue.dequeue()
 myqueue.peek()
 myqueue.print_queue()
+myqueue.reverse_queue()
 myqueue.reverse_queue()
 
 
