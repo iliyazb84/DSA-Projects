@@ -4,32 +4,39 @@ class Queue:
         self.inStack = [] #? Each Elements Goes in This First (Front --> Rear)
         self.outStack = [] #? For Dequeueing, Front Element Goes into This (Front <-- Rear)
 
+    #! Transfers inStack Element onto outStack
+    def transfer(self):
+        while self.inStack:
+            self.outStack.append(self.inStack.pop())
+
+    #! Checks if Queue is Empty
+    def is_empty(self):
+        return not self.outStack and not self.inStack
+
     #! Adding To Queue
     def enqueue(self, data):
         self.inStack.append(data)
         
     #! Removes From Queue
     def dequeue(self):
+        if self.is_empty():
+            raise IndexError("Nothing in Queue...")
 
         #? Checks if OutStack is Empty (Front Element Goes into This)
         if not self.outStack:
-            if not self.inStack: #? Maybe There Is Nothing in Queue At All?
-                raise IndexError("Nothing in Queue...")
 
             #? Pouring All Elements from inStack --> outStack
-            while self.inStack:
-                self.outStack.append(self.inStack.pop())
-        
+            self.transfer()
+
         return self.outStack.pop()
 
     #! Returns the Front Element    
     def peek(self):
-        if not self.outStack:
-            if not self.inStack:
-                raise IndexError("Nothing in Queue...")
+        if self.is_empty():
+            raise IndexError("Nothing in Queue...")
 
-            while self.inStack:
-                self.outStack.append(self.inStack.pop())
+        if not self.outStack:
+            self.transfer()
 
         #? "-1" Returns Last Index (The Front Element)
         return self.outStack[-1]
