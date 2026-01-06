@@ -40,25 +40,3 @@ class Queue:
 
         #? "-1" Returns Last Index (The Front Element)
         return self.outStack[-1]
-    
-
-# Create a queue
-queue = Queue()
-
-# Enqueue elements
-queue.enqueue(10)
-queue.enqueue(20)
-queue.enqueue(30)
-
-print("Front element:", queue.peek())   # Output: 10
-
-# Dequeue elements
-print(queue.dequeue())  # Output: 10
-print(queue.dequeue())  # Output: 20
-
-# Enqueue another element
-queue.enqueue(40)
-
-print(queue.dequeue())  # Output: 30
-print(queue.dequeue())  # Output: 40
-
