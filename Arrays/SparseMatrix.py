@@ -35,6 +35,6 @@ for i in range(MaxLength):
 # Printing Out The Saved Numbers Inside Sparse-Matrix
 num_entries = len(SparsMatrix[0])   # How Many Non-Zero Entries we Stored
 
-print("\nNon-Zero Entries (Sparse Form):")
+print("i    j    Data")
 for k in range(num_entries):
-    print(f"({SparsMatrix[0][k]}, {SparsMatrix[1][k]}, {SparsMatrix[2][k]})")
+    print(f"{SparsMatrix[0][k]}    {SparsMatrix[1][k]}    {SparsMatrix[2][k]}")
